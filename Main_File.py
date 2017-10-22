@@ -41,3 +41,15 @@ for gradient in [dWax, dWaa, dWya, db, dby]:
 gradients = {"dWaa": dWaa, "dWax": dWax, "dWya": dWya, "db": db, "dby": dby}
 
 return gradients
+
+
+np.random.seed(3)
+dWax = np.random.randn(5,3)*10
+dWaa = np.random.randn(5,5)*10
+dWya = np.random.randn(2,5)*10
+db = np.random.randn(5,1)*10
+dby = np.random.randn(2,1)*10
+gradients = {"dWax": dWax, "dWaa": dWaa, "dWya": dWya, "db": db, "dby": dby}
+gradients = clip(gradients, 10)
+
+
