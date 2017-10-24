@@ -53,3 +53,8 @@ gradients = {"dWax": dWax, "dWaa": dWaa, "dWya": dWya, "db": db, "dby": dby}
 gradients = clip(gradients, 10)
 
 
+print("gradients[\"dWaa\"][1][2] =", gradients["dWaa"][1][2])
+print("gradients[\"dWax\"][3][1] =", gradients["dWax"][3][1])
+print("gradients[\"dWya\"][1][2] =", gradients["dWya"][1][2])
+print("gradients[\"db\"][4] =", gradients["db"][4])
+print("gradients[\"dby\"][1] =", gradients["dby"][1])
