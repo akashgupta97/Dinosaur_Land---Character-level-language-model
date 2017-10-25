@@ -58,3 +58,19 @@ print("gradients[\"dWax\"][3][1] =", gradients["dWax"][3][1])
 print("gradients[\"dWya\"][1][2] =", gradients["dWya"][1][2])
 print("gradients[\"db\"][4] =", gradients["db"][4])
 print("gradients[\"dby\"][1] =", gradients["dby"][1])
+
+
+# GRADED FUNCTION: sample
+
+def sample(parameters, char_to_ix, seed):
+    """
+    Sample a sequence of characters according to a sequence of probability distributions output of the RNN
+
+    Arguments:
+    parameters -- python dictionary containing the parameters Waa, Wax, Wya, by, and b.
+    char_to_ix -- python dictionary mapping each character to an index.
+    seed -- used for grading purposes. Do not worry about it.
+
+    Returns:
+    indices -- a list of length n containing the indices of the sampled characters.
+    """
