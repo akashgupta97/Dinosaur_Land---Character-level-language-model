@@ -74,3 +74,14 @@ def sample(parameters, char_to_ix, seed):
     Returns:
     indices -- a list of length n containing the indices of the sampled characters.
     """
+
+    # Retrieve parameters and relevant shapes from "parameters" dictionary
+    Waa, Wax, Wya, by, b = parameters['Waa'], parameters['Wax'], parameters['Wya'], parameters['by'], parameters['b']
+    vocab_size = by.shape[0]
+    n_a = Waa.shape[1]
+
+    ### START CODE HERE ###
+    # Step 1: Create the one-hot vector x for the first character (initializing the sequence generation). (≈1 line)
+    x = np.zeros((vocab_size, 1))
+    # Step 1': Initialize a_prev as zeros (≈1 line)
+    a_prev = np.zeros((n_a, 1))
