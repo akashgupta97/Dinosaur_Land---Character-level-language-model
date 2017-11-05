@@ -90,4 +90,12 @@ def sample(parameters, char_to_ix, seed):
     indices = []
 
     # Idx is a flag to detect a newline character, we initialize it to -1
-    idx = -1 
+    idx = -1
+
+    # Loop over time-steps t. At each time-step, sample a character from a probability distribution and append
+    # its index to "indices". We'll stop if we reach 50 characters (which should be very unlikely with a well
+    # trained model), which helps debugging and prevents entering an infinite loop.
+    counter = 0
+    newline_character = char_to_ix['\n']
+
+    while (idx != newline_character and counter != 50):
