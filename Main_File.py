@@ -109,3 +109,19 @@ def sample(parameters, char_to_ix, seed):
 
         # Step 3: Sample the index of a character within the vocabulary from the probability distribution y
         idx = np.random.choice(list(range(vocab_size)), p=y.ravel())
+
+        # Append the index to "indices"
+        indices.append(idx)
+
+        # Step 4: Overwrite the input character as the one corresponding to the sampled index.
+        x = np.zeros((vocab_size, 1))
+        x[idx] = 1
+
+        # Update "a_prev" to be "a"
+        a_prev = a
+
+        # for grading purposes
+        seed += 1
+        counter += 1
+
+        ### END CODE HERE ###
