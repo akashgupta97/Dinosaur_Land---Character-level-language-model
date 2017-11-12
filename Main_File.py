@@ -125,3 +125,9 @@ def sample(parameters, char_to_ix, seed):
         counter += 1
 
         ### END CODE HERE ###
+
+
+        if (counter == 50):
+            indices.append(char_to_ix['\n'])
+
+        return indices
