@@ -131,3 +131,10 @@ def sample(parameters, char_to_ix, seed):
             indices.append(char_to_ix['\n'])
 
         return indices
+
+    np.random.seed(2)
+    _, n_a = 20, 100
+    Wax, Waa, Wya = np.random.randn(n_a, vocab_size), np.random.randn(n_a, n_a), np.random.randn(vocab_size, n_a)
+    b, by = np.random.randn(n_a, 1), np.random.randn(vocab_size, 1)
+    parameters = {"Wax": Wax, "Waa": Waa, "Wya": Wya, "b": b, "by": by}
+
