@@ -138,3 +138,7 @@ def sample(parameters, char_to_ix, seed):
     b, by = np.random.randn(n_a, 1), np.random.randn(vocab_size, 1)
     parameters = {"Wax": Wax, "Waa": Waa, "Wya": Wya, "b": b, "by": by}
 
+indices = sample(parameters, char_to_ix, 0)
+print("Sampling:")
+print("list of sampled indices:", indices, '\n')
+print("list of sampled characters:", [ix_to_char[i] for i in indices])
