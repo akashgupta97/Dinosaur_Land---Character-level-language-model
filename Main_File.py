@@ -172,3 +172,11 @@ def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
                         dby -- Gradients of output bias vector, of shape (n_y, 1)
     a[len(X)-1] -- the last hidden state, of shape (n_a, 1)
     """
+
+    ### START CODE HERE ###
+
+    # Forward propagate through time (≈1 line)
+    loss, cache = rnn_forward(X, Y, a_prev, parameters)
+
+    # Backpropagate through time (≈1 line)
+    gradients, a = rnn_backward(X, Y, parameters, cache)
