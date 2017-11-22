@@ -180,3 +180,13 @@ def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
 
     # Backpropagate through time (≈1 line)
     gradients, a = rnn_backward(X, Y, parameters, cache)
+
+    # Clip your gradients between -5 (min) and 5 (max) (≈1 line)
+    gradients = clip(gradients, maxValue=5)
+
+    # Update parameters (≈1 line)
+    parameters = update_parameters(parameters, gradients, learning_rate)
+
+    ### END CODE HERE ###
+
+    return loss, gradients, a[len(X) - 1]
