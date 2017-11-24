@@ -190,3 +190,14 @@ def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
     ### END CODE HERE ###
 
     return loss, gradients, a[len(X) - 1]
+
+
+
+np.random.seed(1)
+vocab_size, n_a = 27, 100
+a_prev = np.random.randn(n_a, 1)
+Wax, Waa, Wya = np.random.randn(n_a, vocab_size), np.random.randn(n_a, n_a), np.random.randn(vocab_size, n_a)
+b, by = np.random.randn(n_a, 1), np.random.randn(vocab_size, 1)
+parameters = {"Wax": Wax, "Waa": Waa, "Wya": Wya, "b": b, "by": by}
+X = [12,3,5,11,22,3]
+Y = [4,14,11,22,25, 26]
