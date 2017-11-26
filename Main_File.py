@@ -201,3 +201,14 @@ b, by = np.random.randn(n_a, 1), np.random.randn(vocab_size, 1)
 parameters = {"Wax": Wax, "Waa": Waa, "Wya": Wya, "b": b, "by": by}
 X = [12,3,5,11,22,3]
 Y = [4,14,11,22,25, 26]
+
+
+
+loss, gradients, a_last = optimize(X, Y, a_prev, parameters, learning_rate = 0.01)
+print("Loss =", loss)
+print("gradients[\"dWaa\"][1][2] =", gradients["dWaa"][1][2])
+print("np.argmax(gradients[\"dWax\"]) =", np.argmax(gradients["dWax"]))
+print("gradients[\"dWya\"][1][2] =", gradients["dWya"][1][2])
+print("gradients[\"db\"][4] =", gradients["db"][4])
+print("gradients[\"dby\"][1] =", gradients["dby"][1])
+print("a_last[4] =", a_last[4])
