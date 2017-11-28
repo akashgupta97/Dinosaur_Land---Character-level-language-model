@@ -212,3 +212,23 @@ print("gradients[\"dWya\"][1][2] =", gradients["dWya"][1][2])
 print("gradients[\"db\"][4] =", gradients["db"][4])
 print("gradients[\"dby\"][1] =", gradients["dby"][1])
 print("a_last[4] =", a_last[4])
+
+
+# GRADED FUNCTION: model
+
+def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names=7, vocab_size=27):
+    """
+    Trains the model and generates dinosaur names.
+
+    Arguments:
+    data -- text corpus
+    ix_to_char -- dictionary that maps the index to a character
+    char_to_ix -- dictionary that maps a character to an index
+    num_iterations -- number of iterations to train the model for
+    n_a -- number of units of the RNN cell
+    dino_names -- number of dinosaur names you want to sample at each iteration.
+    vocab_size -- number of unique characters found in the text, size of the vocabulary
+
+    Returns:
+    parameters -- learned parameters
+    """
