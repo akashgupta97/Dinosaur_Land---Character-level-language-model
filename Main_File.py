@@ -232,3 +232,12 @@ def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names
     Returns:
     parameters -- learned parameters
     """
+
+    # Retrieve n_x and n_y from vocab_size
+    n_x, n_y = vocab_size, vocab_size
+
+    # Initialize parameters
+    parameters = initialize_parameters(n_a, n_x, n_y)
+
+    # Initialize loss (this is required because we want to smooth our loss, don't worry about it)
+    loss = get_initial_loss(vocab_size, dino_names)
