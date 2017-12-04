@@ -241,3 +241,12 @@ def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names
 
     # Initialize loss (this is required because we want to smooth our loss, don't worry about it)
     loss = get_initial_loss(vocab_size, dino_names)
+
+    # Build list of all dinosaur names (training examples).
+    with open("dinos.txt") as f:
+        examples = f.readlines()
+    examples = [x.lower().strip() for x in examples]
+
+    # Shuffle list of all dinosaur names
+    np.random.seed(0)
+    np.random.shuffle(examples)
