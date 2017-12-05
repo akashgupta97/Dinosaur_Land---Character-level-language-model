@@ -250,3 +250,15 @@ def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names
     # Shuffle list of all dinosaur names
     np.random.seed(0)
     np.random.shuffle(examples)
+
+    # Initialize the hidden state of your LSTM
+    a_prev = np.zeros((n_a, 1))
+
+    # Optimization loop
+    for j in range(num_iterations):
+        ### START CODE HERE ###
+
+        # Use the hint above to define one training example (X,Y) (≈ 2 lines)
+        index = j % len(examples)
+        X = [None] + [char_to_ix[ch] for ch in examples[index]]
+        Y = X[1:] + [char_to_ix["\n"]]
