@@ -271,3 +271,21 @@ def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names
 
         # Use a latency trick to keep the loss smooth. It happens here to accelerate the training.
         loss = smooth(loss, curr_loss)
+
+        # Every 2000 Iteration, generate "n" characters thanks to sample() to check if the model is learning properly
+        if j % 2000 == 0:
+
+            print('Iteration: %d, Loss: %f' % (j, loss) + '\n')
+
+            # The number of dinosaur names to print
+            seed = 0
+            for name in range(dino_names):
+                # Sample indices and print them
+                sampled_indices = sample(parameters, char_to_ix, seed)
+                print_sample(sampled_indices, ix_to_char)
+
+                seed += 1  # To get the same result for grading purposed, increment the seed by one.
+
+            print('\n')
+
+    return parameters
